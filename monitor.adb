@@ -1,4 +1,4 @@
-package body Monitor is
+package body Monitor with SPARK_Mode is
    
    procedure Monitor_Article_53 is
    begin
@@ -13,7 +13,7 @@ package body Monitor is
       elsif Current_Action = Slow_Drive then
          Violation := Current_Signal /= Signal_Both;
       else -- Current_Action = Normal
-         Violation := Violation or else Current_Signal /= Signal_None;
+         Violation := Current_Signal /= Signal_None;
       end if;
    end Monitor_Article_53;
    
